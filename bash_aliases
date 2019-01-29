@@ -6,7 +6,7 @@ alias ..='cd ../'
 alias pgadmin4='pgadmin4 &'
 alias no='fuck'
 speak() { echo $@ | festival --tts; }
-
+alias clip='xclip -sel clip'
 
 # python
 alias py='python'
@@ -57,6 +57,16 @@ alias hlr='heroku local:run'
 alias hrpm='heroku run python ./manage.py'
 alias hlrpm='heroku local:run python ./manage.py'
 alias show_migrations='heroku local:run python ./manage.py showmigrations'
+
+
+# virtualization
+start() {
+    cd ~/workspace/$1
+    vagrant up
+    vagrant ssh
+    source env/bin/activate
+    cd /vagrant/
+}
 
 
 # create a new virtual environment
