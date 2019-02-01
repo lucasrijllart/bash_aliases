@@ -7,7 +7,7 @@ alias pgadmin4='pgadmin4 &'
 alias no='fuck'
 speak() { echo $@ | festival --tts; }
 alias clip='xclip -sel clip'
-intpi='ssh pi@intpi'
+alias intpi='ssh pi@intpi'
 
 # python
 alias py='python'
