@@ -9,16 +9,27 @@ speak() { echo $@ | festival --tts; }
 alias clip='xclip -sel clip'
 alias intpi='ssh pi@intpi'
 
+
 # python
-alias py='python'
-alias psbb='python setup.py --quiet build bdist_wheel; ls -A1 dist/'
+alias python='python3'
+alias py='python3'
+alias psbb='python3 setup.py --quiet build bdist_wheel; ls -A1 dist/'
+
+
+# vagrant
+alias vgs='vagrant global-status | head --lines=-8'
+alias vp='\time --format="real: %Es" vagrant provision'
+alias vu='\time --format="real %Es" vagrant up'
+alias vup='\time --format="real %Es" vagrant up --provision'
+alias vs='vagrant ssh'
+alias vh='vagrant halt'
 
 
 # git
 alias gs='git status'
 alias gk='gitk --all &'
 alias gc='git commit'
-alias gf='git fetch --all --verbose; git fetch --tags --quiet'
+alias gf='git fetch --all --prune --verbose; git fetch --tags --quiet'
 alias gpt='git push --tags'
 git_branch() {
     git checkout -b $1
