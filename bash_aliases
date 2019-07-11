@@ -9,6 +9,12 @@ speak() { echo $@ | festival --tts; }
 alias clip='xclip -sel clip'
 alias intpi='ssh pi@intpi'
 
+northern_line() {
+    curl -s https://tfl.gov.uk/tube-dlr-overground/status/ | \
+    sed -n '/rainbow-list-item northern/{n;n;n;n;n;n;n;p;}' | \
+    head -1 | sed 's/<[^>]*>//g'
+}
+
 
 # python
 alias python='python3'
